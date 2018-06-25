@@ -1,0 +1,187 @@
+×
+	
+Datenschutzeinstellungen jederzeit prüfen
+
+
+ZU IHREM GOOGLE-KONTO
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Produkte</title>
+   <link rel="stylesheet" href="Main.css">
+</head>
+<body >
+    
+
+	<div class="wrapper">
+        
+        
+        
+		<div class="header">
+        </div>
+        
+        	<!-- oberer Abschnitt (Banner)-->
+        
+        
+        
+   		<div class="sidebar" id="mySidebar">
+    
+            
+                <a href="index.html" >Home</a>
+                <a href="produkte.html" class="active">Produkte</a>
+				<a href="hinzufuegen.html">AddProduct</a>
+                
+		</div>
+ <!-- main klasse enthält headline und content klassen -->
+		<div class="main">
+			<div class="headline"><p>Produkte</p></div>
+            
+            
+			<div class="content">
+                
+           	<!-- haupttablle mit den daten der angebotenen produkte -->
+			
+					<table id="produkt-tab" border="1">
+						
+							<tr>
+								<th>Produktname</th>
+								<th>ProduktID</th>
+								<th>Produktbeschreibung</th>
+								<th>Preis</th>
+								<th>Bild</th>
+							</tr>
+					
+					
+							<tr>
+								<td>SSD-Festplatte</td>
+								<td>001IMP</td>
+								<td>Zweite Festplatte oder SSD für den modularen Schacht
+									Zweite Festplatte für den modularen Schacht ohne Festplatte
+									Passend für LIFEBOOK S935 Dieses Produkt wird exklusiv für Sie
+									gefertigt.</td>
+								<td>50€</td>
+								<td><img src="Bilder/Produkte/SSD.jpg" alt="Selfhtml"
+									width=100 height=50></td>
+							</tr>
+					 <tr>
+								<td>Grafikkarte</td>
+								<td>002IMP</td>
+								<td>Grafikkarte welche aktuelle Gamingtechnologien
+									unterstützt, sowie eine Bildauflösung von
+									4K-/Ultra-HD-Auflösung bietet.</td>
+								<td>30€</td>
+								<td><img src="Bilder/Produkte/grafik.jpg" alt="Selfhtml"
+									width=100 height=50></td>
+							</tr>
+							<tr>
+								<td>CPU</td>
+								<td>003IMP</td>
+								<td>Die CPU für den AM4-Sockel bietet höchstleistung bei
+									Gaming und Multi-Processing und bietet zugleich eine
+									effizienete Performanz, durch intllige features und DDR4-RAM
+									Unterstützung.</td>
+								<td>30€</td>
+								<td><img src="Bilder/Produkte/cpu.jpg" alt="Selfhtml"
+									width=100 height=50></td>
+							</tr>
+					
+						<tfoot>
+							<tr>
+								<td colspan="5">Alle Produkte auch im Shop erhältlich.</td>
+							</tr>
+						</tfoot>    
+					</table>
+		
+			</div>
+		</div>
+        
+        
+        
+        
+    <div class="footer"><h10 id="footerText">&#169Imperium-Hardware 2017 </h10></div>
+        
+        
+	</div>
+    
+    
+   
+        
+        
+        
+	<script type="text/javascript">
+    // in dieser funktion werden die werte der daten aus der url gefiltert welche mit dem submit button im hinzufuegen formular geschickt wurde
+    function getAllUrlParams(){
+        // Parameter von der URL 
+        var queryString = window.location.search.slice(1);
+
+        // Objekt zum Speichern der Wertepaare
+        var obj = {};
+        
+        // Objekte voneinander trennen
+        var arr = queryString.split('&');
+        
+        for (var i=0; i<arr.length; i++){
+            // Name und Wert trennen
+            var a = arr[i].split('=');
+            var paramName = a[0];
+            var paramValue = typeof(a[1])==='undefined' ? true : a[1];
+            paramValue = paramValue.split("+").join(" ");
+            
+            obj[paramName] = paramValue;
+        }
+        
+        return obj;
+    }
+    // zuweisung der einzelnen der Values
+    var gruppe = getAllUrlParams().gruppe;
+    var pid = getAllUrlParams().pid;
+    var preis = getAllUrlParams().preis;
+    var info = getAllUrlParams().info;
+    var bild = getAllUrlParams().bild;
+    var table = document.getElementById("produkt-tab");
+    
+    // values werden nun in eine neue tabellenzeile gespeichert mit 5 zellen gespeichert 
+    var row = table.insertRow(4);
+    
+    var cell1 = row.insertCell(0);
+    cell1.innerHTML = gruppe;
+    var cell2 = row.insertCell(1);
+    cell2.innerHTML = "004IMP";
+    // man kann auch pid +"IMP" so dasss man im kontaktformular die ID eingibt allerdings ist es besser wenn die ID geordnet ist
+    var cell3 = row.insertCell(2);
+    cell3.innerHTML = info;
+    var cell4 = row.insertCell(3);
+    cell4.innerHTML = preis + "€";
+    
+    
+    var cell5 = row.insertCell(4);
+    // hier soll dem eingefügten produkt je nach gruppe ein bild zugwiesen welches was als default dient
+if(gruppe == "SSD"){
+    cell5.innerHTML = "<img src='Bilder/Produkte/SSD.jpg' width='100' height='50'>"
+}   
+    else if (gruppe == "CPU"){
+    cell5.innerHTML = "<img src='Bilder/Produkte/cpu.jpg' width='100' height='50'>"
+}   
+      else if (gruppe == "Mainboard"){
+    cell5.innerHTML = "<img src='Bilder/Produkte/mainboard.jpeg' width='100' height='50'>"
+}      
+        else if (gruppe == "Grafikkarte"){
+    cell5.innerHTML = "<img src='Bilder/Produkte/grafik.jpg' width='100' height='50'>"
+}
+        else if (gruppe == "RAM"){
+    cell5.innerHTML = "<img src='Bilder/Produkte/ram.jpeg' width='100' height='50'>"
+}
+
+    
+ 
+                  
+</script>
+        
+            
+   
+        
+        
+</body>
+</html>

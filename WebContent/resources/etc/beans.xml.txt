@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans>
+
+<!-- ===========================================================================
+  beans.xml - JSF 2.3 Konfigurationsdatei (scheint für tomcat überflüssig zu 
+                                           sein)
+  Verzeichnis: {Projekt}/WebContent/WEB-INF/
+  Version: 1.0.0, 2017-07-01, wkl
+============================================================================ -->
+
+<beans xmlns="http://xmlns.jcp.org/xml/ns/javaee"       
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee                             
+                           http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd"
+       version="1.2" bean-discovery-mode="all">
+
+</beans>

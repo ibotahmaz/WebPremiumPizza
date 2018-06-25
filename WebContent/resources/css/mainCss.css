@@ -1,0 +1,188 @@
+* {
+	box-sizing: border-box;
+}
+
+.wrapper {
+	max-width: 1000px;
+	margin: 0 auto;
+	display: grid; /*festlegung des layouts*/
+	grid-template-columns: repeat(1, 1fr); /*boxen skalisierung*/
+	grid-gap: 2px; /*space zwischen boxen*/
+	grid-auto-rows: minmax(100px, auto);
+}
+
+.wrapper>div {
+	border: 1px solid rgb(233, 171, 88); /*rahmen der  rahmen*/
+	border-radius: 5px; /*abrunden der ecken*/
+	padding: 1em; /* festlegung der gesamtgr��e*/
+	color: #d9480f; /*farbe der gesamtschrift*/
+}
+
+
+
+body {
+    background-color: coral;
+    font-family: verdana;
+    
+}
+
+
+/*_________________________________Header_________________________________*/
+
+.header {
+	grid-column: 1/4; /*position des heaers im grid*/
+	grid-row: 1/3;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-image: url(../resources/img/logo.png );
+	background-color: rgba(0, 0, 0, .6);
+}
+
+/*_________________________________Inhaltsbox besteht aus 3 Boxen_________________________________*/
+/* Hauptbox in der sind headlinebox und inhaltsbox "content" eingebaut */
+
+.main {
+	grid-column: 2/4; /*position des hauptinhalts im grid*/
+	grid-row: 3/8; /* von 2 reihe bis 7. */
+	background-color: rgba(240, 248, 255, 0.96);
+	/* rgb+alphakanal regelt die deckkraft*/
+}
+
+.headline {
+	grid-column: 2/4;
+	grid-row: 1; /* nur �berschrift ist in main drin */
+	text-align: center;
+	font-style: oblique;
+	font-size: 40px;
+	color: black;
+}
+
+.content {
+	grid-column: 2/4;
+	grid-row: 4/8; /*inhalt ist in main drin */
+	color: black;
+}
+
+/*_________________________________Footer_________________________________*/
+.footer {
+	grid-column: 4/1;
+	grid-row: 8;
+	background-color: rgba(0, 0, 0, .6); 
+	text-align: center;
+	margin-bottom: auto;
+	font-feature-settings: normal;
+	color: #fead10;
+}
+
+#footerText {
+	color: #fead10;
+}
+
+/*_________________________________Sidebar_________________________________*/
+.sidebar {
+	background-color: rgba(0, 0, 0, .6);
+	grid-column: 1;
+	grid-row: 3/8;
+	/*background-color: rgba(233,171,88,.5); */
+}
+
+.sidebar a {
+	float: center;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+	border-radius: 5px;
+}
+
+/* beim raufklicken erscheint ein feld*/
+.sidebar a:hover {
+	background-color: #ddd;
+	color: black;
+}
+/* Aktive seite leuchtet farbig auf*/
+.active {
+	background-color: #fead10;
+	color: white;
+}
+
+/*_________________________________Produkttabbelle_________________________________*/
+#produkt-tab {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse: collapse; /*zusammenlegen der grenzen von zellen und �u�eren einheiten*/
+	width: 100%;
+}
+
+#produkt-tab td, #produkt-tab th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+#produkt-tab tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+#produkt-tab tr:hover {
+	background-color: #ddd;
+}
+
+#produkt-tab th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #fead10;
+	color: white;
+}
+
+/* _________________________________Kontaktformular_________________________________*/
+#produkt-tab2 {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#produkt-tab2 td, produkt-tab2 th {
+	border: 0px solid #f2f2f2;;
+	padding: 8px;
+}
+
+/* _________________________________Absenden Button_________________________________*/
+.button {
+	background-color: #fead10;
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s; /*dauer des transition-effekts*/
+	cursor: pointer;
+	border-radius: 5px;
+	box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 1);
+}
+
+.button1 {
+	background-color: white;
+	color: black;
+	border: 2px solid #fead10;
+}
+
+.button1:hover {
+	background-color: #fead10;
+	color: white;
+}
+
+/*_________________________________Dropdownmenu_________________________________*/
+select, input, textarea {
+	border: 1px solid black;
+	padding: 2px 3px;
+	box-shadow: 0 px 1px 0 rgba(0, 0, 0, 1);
+	background-color: rgba(0, 0, 0, .8);;
+	color: white;
+	resize: none;
+}

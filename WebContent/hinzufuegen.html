@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formular</title>
+   <link rel="stylesheet" href="mainCss.css">
+<script>
+        /* funktion zum speichern der werte preis und info welche den wert aus den jeweiligen feldern nimmt */
+function saveValues()
+{
+	localStorage._preis = document.getElementById("preis").value;
+	localStorage._info= document.getElementById("info").value.toString();
+}
+        /* funktion zum laden der gespeicherten werte in die jeweiligen felder */
+function loadValues()
+{
+	document.getElementById("preis").value = localStorage._preis;
+	document.getElementById("info").value = localStorage._info;
+}    
+        
+</script>
+
+</head>
+<!-- on load bei start werden die werte die gepeichert werden in die felder geladen -->
+<body onload="loadValues()">
+    
+    
+	<!-- oberer abschnitt-->
+    
+   <div class="wrapper">
+       
+       
+		<div class="header">
+		
+		</div>
+        
+        
+        
+        
+        
+	<!-- Das menue-->
+		<div class="sidebar" id="mySidebar">
+    
+            
+                <a href="index.html" >Home</a>
+                <a href="produkte.html">Produkte</a>
+				<a href="hinzufuegen.html" class="active">AddProduct</a>
+                
+		</div>
+        
+        
+        
+
+
+        
+		<div class="main">
+            
+            
+			<div class="headline"><p>Produkt Formular</p></div>
+            
+            
+			<div class="content">
+                Hier können sie nach Belieben ihre Hardware selbst zusammenstellen und anfragen ob wir die von Ihnen zusammengestellte Hardware auch anbieten.
+            <p>
+                
+                <tr>
+				<!-- formular in dem die neuen produkte eingegeben werden sollen-->
+				<td align="center">
+					<div id=“produktformular“>
+						<table id = produkt-tab2>
+
+							<tbody>
+								<form action="produkte.html">
+
+									<!--drop down menü-->
+									<tr>
+										<td>Produkt:</td>
+                                         
+										<td><select name="gruppe" size=“1″>
+												<option>SSD</option>
+												<option>Mainboard</option>
+												<option>CPU</option>
+												<option>Grafikkarte</option>
+												<option>RAM</option>
+										</select></td>
+									</tr>
+									<!--    <tr>
+                                    <td>Produkt-ID:</td>
+                                    
+                                    <td><input name="pid" size=“50″></td>
+                                </tr> -->
+									<!--textfeld für den preis-->
+									<tr>
+										<td>Preis:</td>
+                                          
+										<td><input type="number" name="preis" id="preis"></td>
+
+									</tr>
+									<!-- textfeld für die beschreibung-->
+									<tr>
+										<td>Beschreibung:</td>
+                                   
+										<td><textarea name="info" cols=“50″ rows=“4″ id="info"> </textarea></td>
+									</tr>
+
+									<tr>   <td><p></p></td>
+										<!-- button welcher die werte in den feldern mit der methode saveValues speichert und die daten per submit an die produkt html datei sendet welche am anfang mit action dafür gekennzeichnet wurde-->
+                                        <td button onclick="saveValues()"  id="absenden" ><input type="submit" value=Absenden class="button button1 "></td>
+                                      <td><p></p></td>
+                                           <td><p></p></td>
+									</tr>
+								</form>
+								<tr>
+									<!-- das wäre der ladebutton ... lädt aber automatisch durch die funktion onload im body eingang <td button onclick="loadValues()" colspan="2" align="center"><input type="submit" value="Daten Laden"></td> 
+-->
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</td>
+			</tr> </p>
+                 
+                
+               
+			</div>
+		</div> 
+        		<!-- unterer abschnitt -->
+	<div class="footer"><h10 id="footerText">&#169Imperium-Hardware 2017 </h10></div>
+        
+        
+	</div>
+
+</body>
+</html>

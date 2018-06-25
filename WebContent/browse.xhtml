@@ -1,0 +1,241 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+
+<!-- ===========================================================================
+browse.xhtml - Die Seite demonstriert den Zugriff auf eine Datenbanktabelle. Es
+wird die Tabelle "Pizza" geöffnet und durch das
+ResultSet gescrollt
+============================================================================ -->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://xmlns.jcp.org/jsf/core"
+xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<h:head>
+<h:outputStylesheet library="css" name="mainCss.css"/>
+<title>Pizza Premium</title>
+<meta charset="utf-8"/>
+</h:head>
+
+<h:body><h:form>
+
+<a href="https://myfaces.apache.org/">
+
+<!-- Alternativ zu h:graphicImage sollte auch gehen:
+<img class="csslogo" src="resources/img/jsf-logo.png" alt="JSF"/> -->
+</a>
+
+
+<div class="wrapper">
+        
+
+                             <!--  Hoer Header -->
+        
+		<div class="header">
+		<p>Pizza Premium</p>
+			
+			
+		</div>
+		
+		
+		
+<!-- Hier sidebar -->
+	
+		<div class="sidebar" id="mySidebar">
+    
+            
+            <a href="index.html" class="active">Home</a>
+                <a href="produkte.html">Produkte</a>
+				<a href="hinzufuegen.html">AddProduct</a>
+				
+				  <a href="speisekarte.xhtml">Speisekarte</a>
+  <a href="angebote.asp">Angebote</a>
+  <a href="überuns.asp">Über Uns</a>
+                
+		</div>
+		
+		
+		
+		
+		
+        <!-- Hier beginnt Main -->
+      
+        
+		<div class="main">
+		
+		        <!-- Hier Überschrift von Main -->
+		        
+			<div class="headline"><p>Pizza Premium</p> 	</div>
+			
+            
+          <!-- Gier main in main content -->  
+			<div class="content">
+			
+			
+                Seit über einem Jahr bieten wir Ihnen
+				kompetente und zuverlässige Beratung bei allen Fragen rund um den
+				Pizzen.>
+	
+               
+				
+				
+<!-- ================================================================== -->
+
+<h:messages globalOnly="false" showDetail="true" showSummary="true"
+infoClass="msgInfo" warnClass="msgWarning"
+errorClass="msgError" fatalClass="msgFatal"/>
+
+<f:event type="preRenderView" listener="#{mbBrowse.preRenderAction }"/>
+<f:event type="postRenderView" listener="#{mbBrowse.postRenderAction}"/>
+
+
+
+<h3>Bitte registrieren Sie sich! </h3>
+
+<table>
+<tbody>
+<h:panelGroup>
+
+
+<p/><p/>
+<tr>
+<td> KundenID &#160;</td>
+<td>
+<h:inputText id="kundenId" label="kundenId" maxlength="10"
+value="#{mbBrowse.kundenId}"/> &#160;&#160;
+</td>
+</tr>
+
+<tr>
+<td> Vorname &#160; </td>
+<td>
+<h:inputText label="vorname" maxlength="10"
+value="#{mbBrowse.vorname}"/> &#160;&#160;
+</td>
+</tr>
+
+<tr>
+<td> Nachname &#160; </td>
+<td>
+<h:inputText label="nachname" value="#{mbBrowse.nachname}"
+maxlength="45"/> &#160;&#160;
+</td>
+</tr>
+
+<tr>
+
+
+<td> Adresse &#160; </td>
+<td>
+<h:inputText label="adresse" value="#{mbBrowse.adresse}"
+maxlength="45"/> &#160;&#160;
+</td>
+</tr>
+
+<tr>
+
+<td> Postleitzahl &#160; </td>
+<td>
+<h:inputText label="postleitzahl" value="#{mbBrowse.postleitzahl}"
+maxlength="45"/> &#160;&#160;
+</td>
+</tr>
+
+<tr>
+<td>Telefonnummer &#160;</td>
+<td>
+<h:inputText id="telefonnumer" label="telefonnummer" maxlength="10"
+value="#{mbBrowse.telefonnummer}"> &#160;&#160;
+</h:inputText>
+</td>
+</tr>
+</h:panelGroup>
+</tbody>
+</table>
+
+<p/>
+
+<p/><p/><h:panelGroup>
+<h:commandButton value="&lt;&lt;" disabled="#{mbBrowse.prevButtonDisabled}"
+title="Zurück blättern" style="font-size: 130%;"
+actionListener="#{mbBrowse.prev}"/> &#160;&#160;
+
+<h:commandButton value="&gt;&gt;" disabled="#{mbBrowse.nextButtonDisabled}"
+title="Vorwärts blättern" style="font-size: 130%;"
+actionListener="#{mbBrowse.next}"/> &#160;&#160;
+
+<h:commandButton value="Insert" disabled="#{ ! mbBrowse.connected}"
+title="Datensatz einfügen"
+style="font-size: 130%;"
+actionListener="#{mbBrowse.insert}"/> &#160;&#160;
+
+<h:commandButton value="Update" disabled="#{ ! mbBrowse.connected}"
+title="Datensatz aktualisieren"
+style="font-size: 130%;"
+actionListener="#{mbBrowse.update}"/> &#160;&#160;
+
+<h:commandButton value="Delete" disabled="#{ ! mbBrowse.connected}"
+title="Datensatz löschen"
+style="font-size: 130%;"
+actionListener="#{mbBrowse.delete}"/> &#160;&#160;
+
+<h:commandButton value="Connect" disabled="#{mbBrowse.connected}"
+actionListener="#{mbBrowse.connect}"
+style="font-size: 130%;"/> &#160;&#160;
+
+<h:commandButton value="Pizza hinzufügen" disabled="#{ ! mbBrowse.connected}"
+title="Bestellung einfügen"
+style="font-size: 130%;"
+actionListener="#{mbBrowse.bestellen}"/> &#160;&#160;
+
+<h:commandButton value="Disconnect" disabled="#{ ! mbBrowse.connected}"
+actionListener="#{mbBrowse.disconnect}"
+style="font-size: 130%;"/>
+
+
+
+ </h:panelGroup>
+
+<!-- ================================================================== -->
+				
+				
+				</div>
+				
+				
+				
+		</div> 
+        
+
+        
+
+        
+    
+        
+        
+
+
+		
+            
+            
+	
+                               <!--  Footer -->
+		<div class="footer"><h10 id="footerText">&#169; Premium Pizza 2018 </h10>
+		</div>
+        
+        
+
+
+
+
+
+
+
+
+                         <!--  ende  -->
+</div>
+
+
+
+</h:form>
+</h:body> 
+</html>

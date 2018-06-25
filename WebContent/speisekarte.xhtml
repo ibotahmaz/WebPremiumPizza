@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+
+<!-- ===========================================================================
+browse.xhtml - Die Seite demonstriert den Zugriff auf eine Datenbanktabelle. Es
+wird die Tabelle "Pizza" geöffnet und durch das
+ResultSet gescrollt
+============================================================================ -->
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://xmlns.jcp.org/jsf/core"
+xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<h:head>
+<h:outputStylesheet library="css" name="probe.css"/>
+
+<title>Pizza Premium</title>
+<meta charset="utf-8"/>
+
+</h:head>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Produkte</title>
+   <link rel="stylesheet" href="mainCss.css">
+</head>
+<h:body>
+
+
+
+<h:graphicImage library="img" name="pizza.png" alt="Logo"/>
+
+
+<h1> Pizza Bestellung </h1>
+<br> </br>
+<br> </br>
+<br> </br>
+<h2>Pizza Klassiker Feinschmecker </h2>
+    <p>Hier kann irgend ein Bla Bla stehen.</p>
+
+<hr/>
+<p>
+<h:form>
+
+    Rockymountain <br> </br>
+<h:graphicImage library="img" name="Rockmountain.png" alt="Rockymountain"  width="100" height="100" /> <br> </br>
+ <!--
+		Wählen Sie ihre Pizzagröße in cm aus:<br> </br>
+		26 : <input type="radio" name="rockymountain" value="#{mbBrowse.groesse}" />
+		32 : <input type="radio" name="rockymountain" value="#{mbBrowse.groesse}" />
+		48 : <input type="radio" name="rockymountain" value="#{mbBrowse.groesse}" />
+		
+		 -->
+		Größe &#160;
+<h:inputText label="Größe" value="#{mbBrowse.groesse}"
+maxlength="45"/> &#160;&#160;
+			<br>
+			<br>
+<h:commandButton value="Pizza hinzufügen" disabled="#{ ! mbBrowse.connected}"
+title="Bestellung einfügen"
+style="font-size: 130%;"
+actionListener="#{mbBrowse.bestellen}"/> &#160;&#160;
+		  </br>
+		  </br>	
+		  
+		  </h:form>
+		  
+		</p>
+
+<p>
+<h:form>
+    Chicken Curry <br> </br>
+    
+<h:graphicImage library="img" name="ChickenCurry.png" alt="Chickencurry"  width="100" height="100" /> <br> </br>
+
+		Wählen Sie ihre Pizza aus: <br> </br>
+		Standard : <input type="radio" name="chickencurry" value="standard" />
+		Maxi : <input type="radio" name="chickencurry" value="maxi" />
+		Wumbo : <input type="radio" name="chickencurry" value="wumbo" />
+			
+			
+</h:form>
+
+</p>
+
+
+
+
+</h:body> 
+</html>
