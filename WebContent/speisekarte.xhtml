@@ -12,31 +12,118 @@ xmlns:f="http://xmlns.jcp.org/jsf/core"
 xmlns:h="http://xmlns.jcp.org/jsf/html">
 
 <h:head>
-<h:outputStylesheet library="css" name="probe.css"/>
-
+<h:outputStylesheet library="css" name="mainCss.css"/>
 <title>Pizza Premium</title>
 <meta charset="utf-8"/>
-
 </h:head>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Produkte</title>
-   <link rel="stylesheet" href="mainCss.css">
-</head>
-<h:body>
+
+<h:body><h:form>
+
+<a href="https://myfaces.apache.org/">
+
+<!-- Alternativ zu h:graphicImage sollte auch gehen:
+<img class="csslogo" src="resources/img/jsf-logo.png" alt="JSF"/> -->
+</a>
+
+<!--  hier begiint paket-->
+<div class="wrapper">
+        
+
+                             <!--  Hoer Header -->
+        
+		<div class="header">                           </div>
+		
+		
+		
+<!-- Hier sidebar -->
+	
+		<div class="sidebar" id="mySidebar">
+    
+        
+             <a href="browse.xhtml" >Home</a>
+             <a href="speisekarte.xhtml" class="active">Speisekarte</a>
+             <a href="angebote.asp">Angebote</a>
+             <a href="überuns.asp">Über Uns</a>
+                
+		</div>
+		
+		
+		
+		
+		
+        <!-- Hier beginnt Main -->
+      
+        
+		<div class="main">
+		
+		        <!-- Hier Überschrift von Main -->
+		        
+			<div class="headline"><p>Speisekarte</p> 	</div>
+			
+            
+          <!-- Gier main in main content -->  
+			<div class="content">
+			
+			
+
+  	<!-- haupttablle mit den daten der angebotenen produkte -->
+			
+					<table id="produkt-tab" border="1">
+						
+							<tr>
+								<th>Pizzaname</th>
+								<th>Pizzagröße</th>
+								<th>Produktbeschreibung</th>
+								<th>Preis</th>
+								<th>Bild</th>
+							</tr>
+					
+					
+							<tr>
+								<td>SSD-Festplatte</td>
+								<td>Größe &#160;
+<h:inputText label="Größe" value="#{mbBrowse.groesse}"
+maxlength="45"/> &#160;&#160;</td>
+								<td>Zweite Festplatte oder SSD für den modularen Schacht
+									Zweite Festplatte für den modularen Schacht ohne Festplatte
+									Passend für LIFEBOOK S935 Dieses Produkt wird exklusiv für Sie
+									gefertigt.</td>
+								<td>50€</td>
+								<td><h:graphicImage library="img" name="Rockmountain.png" alt="Rockymountain"  width="100" height="100" /></td>
+							</tr>
+					 <tr>
+								<td>Grafikkarte</td>
+								<td>002IMP</td>
+								<td>Grafikkarte welche aktuelle Gamingtechnologien
+									unterstützt, sowie eine Bildauflösung von
+									4K-/Ultra-HD-Auflösung bietet.</td>
+								<td>30€</td>
+								<td><h:graphicImage library="img" name="Rockmountain.png" alt="Rockymountain"  width="100" height="100" /></td>
+							</tr>
+							<tr>
+								<td>CPU</td>
+								<td>003IMP</td>
+								<td>Die CPU für den AM4-Sockel bietet höchstleistung bei
+									Gaming und Multi-Processing und bietet zugleich eine
+									effizienete Performanz, durch intllige features und DDR4-RAM
+									Unterstützung.</td>
+								<td>30€</td>
+								<td><h:graphicImage library="img" name="Rockmountain.png" alt="Rockymountain"  width="100" height="100" /></td>
+							</tr>
+					
+						<tfoot>
+							<tr>
+								<td colspan="5">Alle Produkte auch im Shop erhältlich.</td>
+							</tr>
+						</tfoot>    
+					</table>
+		
+		
 
 
 
-<h:graphicImage library="img" name="pizza.png" alt="Logo"/>
 
-
-<h1> Pizza Bestellung </h1>
-<br> </br>
-<br> </br>
-<br> </br>
-<h2>Pizza Klassiker Feinschmecker </h2>
-    <p>Hier kann irgend ein Bla Bla stehen.</p>
+   
 
 <hr/>
 <p>
@@ -68,6 +155,8 @@ actionListener="#{mbBrowse.bestellen}"/> &#160;&#160;
 		</p>
 
 <p>
+
+
 <h:form>
     Chicken Curry <br> </br>
     
@@ -83,8 +172,46 @@ actionListener="#{mbBrowse.bestellen}"/> &#160;&#160;
 
 </p>
 
+<!-- ================================================================== -->
+				
+				
+				</div>
+				
+				
+				
+		</div> 
+        
+
+        
+
+        
+    
+        
+        
+
+
+		
+            
+            
+	
+                               <!--  Footer -->
+		<div class="footer"><h10 id="footerText">&#169; Premium Pizza 2018 </h10>
+		</div>
+        
+        
 
 
 
+
+
+
+
+
+                         <!--  ende  -->
+</div>
+
+
+
+</h:form>
 </h:body> 
 </html>
